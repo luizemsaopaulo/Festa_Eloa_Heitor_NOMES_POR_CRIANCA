@@ -1,0 +1,26 @@
+RELATÓRIO DE DEPURAÇÃO — NOMES INDIVIDUAIS
+
+Verificações realizadas:
+- HTML do convite e do painel analisado sem IDs duplicados.
+- JavaScript dos dois arquivos passou na verificação de sintaxe do Node.js.
+- Seleção de quantidade ligada à criação dinâmica de um campo por criança.
+- Os nomes já digitados são preservados ao aumentar a quantidade.
+- Validação exige exatamente um nome preenchido para cada criança selecionada.
+- Envio usa texto simples, com um nome por linha, evitando o erro anterior de JSON.
+- Função RPC e nomes dos parâmetros conferidos entre HTML e SQL.
+- SQL valida a quantidade de nomes e armazena todos os nomes na mesma confirmação.
+- Painel mostra todos os nomes, a quantidade e a data da confirmação.
+- Coluna de protocolo removida da tela, dos cartões do celular e do CSV.
+- Identificador interno preservado somente para seleção e exclusão.
+- Pesquisa do painel confere todos os nomes da confirmação.
+- Exclusão, compartilhamento e atualização automática preservados.
+
+Teste recomendado após instalar:
+1. Selecione 2 crianças.
+2. Preencha dois nomes diferentes.
+3. Envie a confirmação.
+4. Abra o painel e confira os dois nomes na mesma linha/cartão.
+5. Selecione e exclua o teste.
+
+Limite do teste:
+A gravação real depende da execução do SQL no projeto Supabase do usuário.

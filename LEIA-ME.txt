@@ -1,0 +1,36 @@
+FESTA DE ELOÁ E HEITOR — NOMES INDIVIDUAIS DAS CRIANÇAS
+
+FORMULÁRIO DO CONVITE
+- Mostra somente “Sim, irei”.
+- Primeiro escolhe quantas crianças irão.
+- Depois aparece um campo separado para o nome de cada criança.
+- Exemplo: ao escolher 2 crianças, aparecem “Nome da 1ª criança” e “Nome da 2ª criança”.
+- Não pede nome dos pais, telefone, alergia, observação ou resposta “Não”.
+
+PAINEL DE CONFIRMAÇÕES
+- Mostra todos os nomes informados em cada confirmação.
+- Mostra a quantidade total de crianças.
+- A coluna de protocolo foi removida da tela e também do arquivo CSV.
+- O identificador continua existindo apenas internamente para permitir selecionar e excluir registros.
+- O painel atualiza sozinho a cada 15 segundos.
+
+INFORMAÇÕES DA FESTA
+- Data: sábado, 01/08/2026
+- Horário: 14h às 18h
+- Local: Casa da Lu e do Rodrigo
+- Endereço: Rodovia Augusto Freire, 500 — Juncal
+
+COMO ATUALIZAR O SUPABASE
+1. Abra 1_INSTALAR_OU_ATUALIZAR_SUPABASE.sql.
+2. Copie tudo.
+3. No Supabase, abra SQL Editor > New query.
+4. Cole e clique em Run.
+5. Aguarde “Success. No rows returned”.
+
+COMO USAR
+- Abra index.html para o convite.
+- Abra confirmacoes.html para o painel.
+- Substitua os arquivos antigos pelos novos ao publicar o site.
+
+IMPORTANTE
+O painel não possui senha. Quem descobrir o endereço de confirmacoes.html poderá ver e excluir confirmações.

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#d94d83">
+  <meta name="description" content="Convite e confirmação de presença para o aniversário de Eloá e Heitor.">
+  <title>Aniversário de Eloá e Heitor</title>
+  <style>
+    :root {
+      --rosa:#d94d83; --rosa-escuro:#a72c5c; --rosa-claro:#fff0f6;
+      --azul:#5179c8; --amarelo:#ffd56b; --verde:#217a53;
+      --texto:#392f38; --muted:#746a73; --borda:#ead7e1; --card:#fff;
+      --sombra:0 18px 55px rgba(91,38,65,.15); --raio:24px;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;min-height:100vh;color:var(--texto);background:linear-gradient(180deg,#fffaf7,#fff2f7)}
+    body.opening-active{height:100vh;height:100dvh;overflow:hidden} button,input,select{font:inherit} button{cursor:pointer}
+    .page{width:min(920px,calc(100% - 24px));margin:auto;padding:22px 0 48px}.view{display:none}.view.active{display:block;animation:enter .3s ease both}@keyframes enter{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:scale(1)}}
+    .opening{position:relative;width:100vw;height:100vh;height:100dvh;min-height:100svh;margin-top:-22px;margin-left:calc(50% - 50vw);overflow:hidden;background:#111}
+    .opening img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}.opening::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.06),transparent 32%),linear-gradient(0deg,rgba(0,0,0,.76),rgba(0,0,0,.12) 48%,transparent 70%)}
+    .opening-panel{position:absolute;z-index:2;left:50%;bottom:max(18px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(720px,calc(100% - 26px));padding:18px;text-align:center;color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.72)}
+    .chip{display:inline-block;padding:7px 13px;border:1px solid rgba(255,255,255,.5);border-radius:999px;background:rgba(0,0,0,.28);font-size:.9rem;font-weight:900;backdrop-filter:blur(8px)}
+    .opening h1{margin:10px 0 7px;font-size:clamp(1.75rem,7vw,3rem);line-height:1.06}.opening p{margin:0 auto 15px;max-width:620px;color:rgba(255,255,255,.94);font-weight:650}
+    .primary,.secondary,.music{border:0;border-radius:999px;font-weight:900}.primary{min-height:52px;padding:0 25px;color:#fff;background:linear-gradient(135deg,#ec679a,#bd326a);box-shadow:0 12px 30px rgba(145,21,76,.35)}.primary:hover:not(:disabled){transform:translateY(-1px)}.primary:disabled{opacity:.6;cursor:not-allowed}
+    .music{position:fixed;z-index:30;right:14px;top:14px;padding:10px 14px;color:#245c44;background:rgba(246,255,250,.94);box-shadow:0 10px 30px rgba(0,0,0,.15)}
+    .toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0 14px}.secondary{padding:10px 15px;color:var(--rosa-escuro);background:#fff;border:1px solid var(--borda)}
+    .hero,.card,.success{border:1px solid var(--borda);border-radius:var(--raio);background:rgba(255,255,255,.96);box-shadow:var(--sombra)}.hero{padding:28px;text-align:center;background:radial-gradient(circle at top left,rgba(255,213,107,.25),transparent 32%),radial-gradient(circle at top right,rgba(81,121,200,.13),transparent 30%),#fff}.brand{font-weight:900;color:var(--rosa-escuro)}.hero h1{margin:8px 0 0;font-size:clamp(1.5rem,5vw,2.3rem)}.names{margin:7px 0;font-family:Georgia,serif;font-size:clamp(2rem,8vw,4rem);font-weight:800;color:var(--rosa)}.amp{padding:0 8px;color:var(--azul)}.ages{margin:0;color:var(--muted);font-weight:700}
+    .event-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}.event{min-height:126px;padding:15px;border-radius:18px;background:#fff8fb;border:1px solid #f0d9e4;display:flex;flex-direction:column;justify-content:center}.event-icon{font-size:1.55rem}.event-label{margin:5px 0;color:var(--muted);font-size:.8rem;font-weight:900;text-transform:uppercase}.event-value{white-space:pre-line;font-weight:900}.event-note{margin:17px 0 0;color:var(--muted)}
+    .info{display:flex;gap:12px;align-items:flex-start;margin:16px 0;padding:15px 17px;border-radius:18px;color:#5f4d58;background:#fff8dd;border:1px solid #f2db8c}.info strong{display:block;margin-bottom:2px}.info p{margin:0}
+    .card{padding:25px}.card h2{margin:0}.intro{margin:5px 0 20px;color:var(--muted)}.yes-banner{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding:14px 16px;border-radius:16px;color:#17633f;background:#ebf9f1;border:1px solid #aee1c5;font-weight:900}
+    .field-grid{display:grid;grid-template-columns:1fr;gap:15px}.children-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:4px}.child-field{margin-bottom:13px}.child-field label{display:block;margin-bottom:7px;font-weight:900}.child-field input{width:100%;min-height:51px;border:1px solid #dcbfcd;border-radius:14px;padding:0 14px;color:var(--texto);background:#fff;outline:none}.child-field input:focus{border-color:var(--rosa);box-shadow:0 0 0 4px rgba(217,77,131,.12)}.field{margin-bottom:17px}.field label{display:block;margin-bottom:7px;font-weight:900}.required{color:#ba2d61}.field input,.field select{width:100%;min-height:51px;border:1px solid #dcbfcd;border-radius:14px;padding:0 14px;color:var(--texto);background:#fff;outline:none}.field input:focus,.field select:focus{border-color:var(--rosa);box-shadow:0 0 0 4px rgba(217,77,131,.12)}.hint{margin:6px 2px 0;color:var(--muted);font-size:.88rem}
+    .privacy{display:flex;gap:8px;margin:4px 0 18px;color:var(--muted);font-size:.89rem}.submit{width:100%;border-radius:15px}.status{display:none;margin-top:15px;padding:13px;border-radius:14px;font-weight:750;white-space:pre-wrap}.status.show{display:block}.status.error{color:#9b3044;background:#fff0f2;border:1px solid #efb7c1}.status.info{color:#5f5479;background:#f4f1ff;border:1px solid #d4cbee}
+    .backend{display:none;margin-bottom:15px;padding:13px;border-radius:14px;color:#9b3044;background:#fff0f2;border:1px solid #efb7c1}.honeypot{position:absolute;left:-9999px;opacity:0;pointer-events:none}
+    .success{display:none;padding:34px;text-align:center}.success.visible{display:block}.success-icon{font-size:3rem}.success h2{margin:8px 0}.success p{color:var(--muted)}
+    footer{text-align:center;padding:22px 0 0;color:var(--muted);font-size:.88rem}
+    @media(max-width:680px){.children-fields{grid-template-columns:1fr}.page{width:min(100% - 16px,920px);padding-top:8px}.opening{margin-top:-8px}.event-grid,.field-grid{grid-template-columns:1fr}.event{min-height:auto}.hero,.card{padding:20px 15px}.music{right:8px;top:8px}.toolbar{position:sticky;top:8px;z-index:15}}
+    @media(prefers-reduced-motion:reduce){.view.active{animation:none}}
+  </style>
+</head>
+<body class="opening-active">
+  <button id="musicToggle" class="music" type="button" aria-pressed="false">♫ Tocar música</button>
+  <main class="page">
+    <section id="openingView" class="view opening active" aria-labelledby="openingTitle">
+      <img src="fundo-festa.png" alt="Arte do convite da festa de Eloá e Heitor">
+      <div class="opening-panel">
+        <span class="chip">✨ Você é nosso convidado</span>
+        <h1 id="openingTitle" tabindex="-1">Eloá e Heitor esperam por você!</h1>
+        <p>Sábado, 1º de agosto, das 14h às 18h.</p>
+        <button id="advanceBtn" class="primary" type="button">Confirmar presença</button>
+      </div>
+    </section>
+
+    <section id="confirmView" class="view" hidden>
+      <div class="toolbar"><button id="backBtn" class="secondary" type="button">← Voltar ao convite</button><strong>Confirmação de presença</strong></div>
+      <section id="eventHero" class="hero">
+        <div class="brand">🎈 Organização: Tudo de Helena</div>
+        <h1 id="eventTitle">Aniversário de Eloá e Heitor</h1>
+        <div class="names"><span id="child1Name">Eloá</span><span class="amp">&amp;</span><span id="child2Name">Heitor</span></div>
+        <p id="ages" class="ages"></p>
+        <div class="event-grid">
+          <div class="event"><span class="event-icon">📅</span><span class="event-label">Data</span><span id="eventDate" class="event-value">Sábado, 01 de agosto de 2026</span></div>
+          <div class="event"><span class="event-icon">🕒</span><span class="event-label">Horário</span><span id="eventTime" class="event-value">14:00 às 18:00</span></div>
+          <div class="event"><span class="event-icon">📍</span><span class="event-label">Local</span><span id="eventLocation" class="event-value">Casa da Lu e do Rodrigo
+Rodovia Augusto Freire, 500 — Juncal</span></div>
+        </div>
+        <p id="eventNote" class="event-note">Esperamos você para uma tarde muito especial!</p>
+      </section>
+
+      <aside class="info"><span>🧒</span><div><strong>Confirmação simples</strong><p id="inviteRule">Informe quantas crianças irão e escreva o nome de cada uma.</p></div></aside>
+
+      <section id="formCard" class="card">
+        <h2>Confirme a presença</h2>
+        <p class="intro">Escolha a quantidade e informe o nome de cada criança.</p>
+        <div id="backendAlert" class="backend">A conexão com o Supabase não está configurada. Confira o arquivo <strong>supabase-config.js</strong>.</div>
+        <form id="rsvpForm" novalidate>
+          <div class="yes-banner">✅ Sim, irei à festa</div>
+          <div class="field-grid">
+            <div class="field">
+              <label for="childrenCount">Quantas crianças irão? <span class="required">*</span></label>
+              <select id="childrenCount" name="childrenCount" required></select>
+              <p class="hint">Ao escolher a quantidade, aparecerá um campo para o nome de cada criança.</p>
+            </div>
+          </div>
+          <div id="childrenNamesFields" class="children-fields" aria-live="polite"></div>
+          <div class="honeypot" aria-hidden="true"><label for="website">Não preencha</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <div class="privacy"><span>🔒</span><span>Os dados serão usados somente para organizar a festa.</span></div>
+          <button id="submitBtn" class="primary submit" type="submit">Confirmar presença</button>
+          <div id="formStatus" class="status" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+
+      <section id="successCard" class="success">
+        <div class="success-icon">✅</div><h2>Presença confirmada!</h2>
+        <p id="successText">A organização recebeu a confirmação.</p>
+        <button id="anotherBtn" class="secondary" type="button">Enviar outra confirmação</button>
+      </section>
+      <footer>Festa Tudo de Helena • Eloá &amp; Heitor</footer>
+    </section>
+  </main>
+
+  <script src="supabase-config.js"></script>
+  <script>
+    'use strict';
+    const $ = s => document.querySelector(s);
+    const SUPABASE_URL = String(window.TDH_SUPABASE?.url || '').replace(/\/$/, '');
+    const SUPABASE_KEY = String(window.TDH_SUPABASE?.publishableKey || '');
+    const CONFIGURED = /^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(SUPABASE_URL) && SUPABASE_KEY.startsWith('sb_publishable_');
+    const DEFAULT_CONFIG = {
+      eventTitle:'Aniversário de Eloá e Heitor', child1Name:'Eloá', child1Age:'7', child2Name:'Heitor', child2Age:'2',
+      eventDate:'2026-08-01', eventTime:'14:00', eventEndTime:'18:00', locationName:'Casa da Lu e do Rodrigo',
+      address:'Rodovia Augusto Freire, 500 — Juncal', eventNote:'Esperamos você para uma tarde muito especial!',
+      inviteRule:'Informe quantas crianças irão e escreva o nome de cada uma.', maxChildrenPerResponse:10
+    };
+    const state={config:{...DEFAULT_CONFIG},startedAt:Date.now(),musicPlaying:false,audioContext:null,musicTimer:null};
+
+    function clean(value,max=500){return String(value??'').replace(/\s+/g,' ').trim().slice(0,max)}
+    function dateBR(iso){if(!/^\d{4}-\d{2}-\d{2}$/.test(iso||''))return'';const [y,m,d]=iso.split('-').map(Number);return new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'2-digit',month:'long',year:'numeric'}).format(new Date(y,m-1,d)).replace(/^./,c=>c.toUpperCase())}
+    function age(name,years){const n=Number(years);return name&&Number.isFinite(n)&&n>0?`${name}: ${n} ${n===1?'ano':'anos'}`:''}
+    function ordinal(n){return n===1?'1ª':`${n}ª`}
+    function currentNames(){return [...document.querySelectorAll('.child-name-input')].map(input=>input.value)}
+    function renderChildFields(){const quantity=Math.min(20,Math.max(1,Number($('#childrenCount').value)||1));const previous=currentNames();const box=$('#childrenNamesFields');box.innerHTML='';for(let i=0;i<quantity;i++){const wrap=document.createElement('div');wrap.className='child-field';const label=document.createElement('label');const id=`childName${i+1}`;label.htmlFor=id;label.innerHTML=`Nome da ${ordinal(i+1)} criança <span class="required">*</span>`;const input=document.createElement('input');input.id=id;input.name='childNames';input.className='child-name-input';input.type='text';input.maxLength=120;input.required=true;input.autocomplete='off';input.placeholder=`Digite o nome da ${ordinal(i+1)} criança`;input.value=previous[i]||'';wrap.append(label,input);box.append(wrap)}}
+    function populate(max){const select=$('#childrenCount');const selected=Math.min(20,Math.max(1,Number(select.value)||1));select.innerHTML='';const limit=Math.min(20,Math.max(1,Number(max)||10));for(let i=1;i<=limit;i++){const o=document.createElement('option');o.value=i;o.textContent=`${i} ${i===1?'criança':'crianças'}`;select.append(o)}select.value=String(Math.min(selected,limit));renderChildFields()}
+    function collectNames(){return [...document.querySelectorAll('.child-name-input')].map(input=>clean(input.value,120))}
+    function namesSentence(names){if(names.length<=1)return names[0]||'';if(names.length===2)return `${names[0]} e ${names[1]}`;return `${names.slice(0,-1).join(', ')} e ${names.at(-1)}`}
+    function applyConfig(raw){const c={...DEFAULT_CONFIG,...(raw||{})};state.config=c;document.title=c.eventTitle||DEFAULT_CONFIG.eventTitle;$('#eventTitle').textContent=c.eventTitle;$('#child1Name').textContent=c.child1Name;$('#child2Name').textContent=c.child2Name;$('#ages').textContent=[age(c.child1Name,c.child1Age),age(c.child2Name,c.child2Age)].filter(Boolean).join(' • ');$('#eventDate').textContent=dateBR(c.eventDate)||'Sábado, 01 de agosto de 2026';const times=[clean(c.eventTime,10),clean(c.eventEndTime,10)].filter(Boolean);$('#eventTime').textContent=times.length===2?`${times[0]} às ${times[1]}`:(times[0]||'14:00 às 18:00');$('#eventLocation').textContent=[clean(c.locationName,100),clean(c.address,180)].filter(Boolean).join('\n');$('#eventNote').textContent=clean(c.eventNote,500);$('#inviteRule').textContent=clean(c.inviteRule,500);populate(c.maxChildrenPerResponse)}
+    function status(message,type='error'){const box=$('#formStatus');box.textContent=message;box.className=`status show ${type}`}
+    function clearStatus(){const box=$('#formStatus');box.textContent='';box.className='status'}
+    async function rpc(name,args={},timeout=25000){if(!CONFIGURED)throw new Error('A conexão com o Supabase ainda não foi configurada.');const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),timeout);try{const response=await fetch(`${SUPABASE_URL}/rest/v1/rpc/${encodeURIComponent(name)}`,{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY},body:JSON.stringify(args),signal:controller.signal});const raw=await response.text();let data=null;if(raw){try{data=JSON.parse(raw)}catch{data={message:raw}}}if(!response.ok){const msg=data?.message||data?.details||'A operação não pôde ser concluída.';const missing=response.status===404||/function .* could not be found|schema cache|PGRST202/i.test(String(msg));throw new Error(missing?'Execute o arquivo 1_INSTALAR_OU_ATUALIZAR_SUPABASE.sql no SQL Editor do Supabase.':msg)}return data}catch(error){if(error?.name==='AbortError')throw new Error('O envio demorou mais que o esperado. Confira a internet e tente novamente.');throw error}finally{clearTimeout(timer)}}
+    async function loadConfig(){if(!CONFIGURED){$('#backendAlert').style.display='block';applyConfig(DEFAULT_CONFIG);return}$('#backendAlert').style.display='none';try{const data=await rpc('obter_configuracao_publica',{},12000);applyConfig(data?.config||DEFAULT_CONFIG)}catch{applyConfig(DEFAULT_CONFIG);status('Os detalhes foram carregados do convite. O formulário continua disponível.','info')}}
+
+    $('#childrenCount').addEventListener('change',renderChildFields);
+    $('#rsvpForm').addEventListener('submit',async event=>{event.preventDefault();clearStatus();const quantity=Number($('#childrenCount').value);const names=collectNames();if(!Number.isInteger(quantity)||quantity<1||quantity>20){status('Informe uma quantidade válida.');return}if(names.length!==quantity){status('Preencha um nome para cada criança.');renderChildFields();return}const invalidIndex=names.findIndex(name=>name.length<2);if(invalidIndex>=0){status(`Informe o nome da ${ordinal(invalidIndex+1)} criança.`);document.querySelectorAll('.child-name-input')[invalidIndex]?.focus();return}const button=$('#submitBtn');button.disabled=true;button.textContent='Enviando...';try{await rpc('registrar_confirmacao_simples',{p_nomes_criancas:names.join('\n'),p_quantidade:quantity,p_website:$('#website').value});$('#successText').textContent=`Confirmação registrada para ${quantity} ${quantity===1?'criança':'crianças'}: ${namesSentence(names)}.`;$('#eventHero').style.display='none';document.querySelector('.info').style.display='none';$('#formCard').style.display='none';$('#successCard').classList.add('visible');window.scrollTo(0,0)}catch(error){status(error.message||'Não foi possível enviar. Tente novamente.')}finally{button.disabled=false;button.textContent='Confirmar presença'}});
+    $('#anotherBtn').addEventListener('click',()=>{$('#rsvpForm').reset();populate(state.config.maxChildrenPerResponse);$('#successCard').classList.remove('visible');$('#eventHero').style.display='block';document.querySelector('.info').style.display='flex';$('#formCard').style.display='block';state.startedAt=Date.now();clearStatus();window.scrollTo(0,0);document.querySelector('.child-name-input')?.focus()});
+
+    const JINGLE=[[72,.28],[76,.28],[79,.4],[76,.28],[74,.28],[77,.28],[81,.48],[79,.28],[76,.28],[74,.28],[72,.48],[67,.28],[72,.28],[76,.28],[79,.52]];
+    function freq(m){return 440*Math.pow(2,(m-69)/12)}
+    function cycle(){const c=state.audioContext;if(!state.musicPlaying||!c||c.state==='closed')return;let t=c.currentTime+.05;for(const [m,b] of JINGLE){const d=Math.max(.12,b*.55);const o=c.createOscillator(),g=c.createGain();o.type='triangle';o.frequency.setValueAtTime(freq(m),t);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.1,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+d);t+=b*.62}state.musicTimer=setTimeout(cycle,Math.max(600,(t-c.currentTime+1)*1000))}
+    function musicButton(){const b=$('#musicToggle');b.setAttribute('aria-pressed',String(state.musicPlaying));b.textContent=state.musicPlaying?'🔊 Música ligada':'♫ Tocar música'}
+    async function startMusic(){if(state.musicPlaying)return;const AC=window.AudioContext||window.webkitAudioContext;if(!AC){$('#musicToggle').disabled=true;return}try{state.audioContext=new AC();await state.audioContext.resume();state.musicPlaying=true;musicButton();cycle()}catch{state.musicPlaying=false;musicButton()}}
+    async function stopMusic(){state.musicPlaying=false;clearTimeout(state.musicTimer);const c=state.audioContext;state.audioContext=null;if(c&&c.state!=='closed')try{await c.close()}catch{}musicButton()}
+    $('#musicToggle').addEventListener('click',()=>state.musicPlaying?stopMusic():startMusic());
+    function showView(which){const opening=which==='opening';$('#openingView').hidden=!opening;$('#confirmView').hidden=opening;$('#openingView').classList.toggle('active',opening);$('#confirmView').classList.toggle('active',!opening);document.body.classList.toggle('opening-active',opening);window.scrollTo(0,0)}
+    $('#advanceBtn').addEventListener('click',()=>{if(!state.musicPlaying)startMusic();showView('confirm')});$('#backBtn').addEventListener('click',()=>showView('opening'));
+    applyConfig(DEFAULT_CONFIG);loadConfig();
+  </script>
+</body>
+</html>
